@@ -29,10 +29,14 @@
                               <%= article.title %>
                             </h2>
                             <h3 class="post-subtitle">
-                             <%= article.content %>
+                                <% if article.content != nil %>
+                                    <% if article.content.split('.').first != nil %>
+                                      <%= markdown(article.content.split('.').first) %>
+                                    <% end %>
+                                  <% end %>
                             </h3>
                         </a>
-                    <p class="post-meta">Posted by <a href="About"><%= article.name %></a> on July 8, 2014</p>
+                    <p class="post-meta">Posted by <a href="About">JangJang<%= article.name %></a> <%= article.created_at %></p>
                 </div>
                 <hr>
                 <% end %>

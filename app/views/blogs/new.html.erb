@@ -4,7 +4,9 @@
     </div>
     
     <div>
-    내용 : <textarea cols = 40 rows = 20 name="content"></textarea>
+    <%= md_simple_editor  do %>
+    내용 : <%= text_area_tag "content" , nil,  cols: 40, rows: 20 %>
+    <% end %>
     </div>
     
     <div>
